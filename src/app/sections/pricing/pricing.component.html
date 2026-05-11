@@ -1,0 +1,46 @@
+<section class="relative w-full px-4 py-[88px] sm:px-6 md:px-10 md:py-[100px] lg:px-16 lg:py-[115px]">
+  <div class="mx-auto flex w-full max-w-4xl flex-col items-start gap-10 md:gap-[47px]">
+    <header class="flex w-full flex-col items-center gap-2 text-center">
+      <p class="font-[Manrope,Helvetica] text-xs font-normal leading-4 tracking-[1.20px] text-[#874c69]">
+        CARTE DES SOINS
+      </p>
+      <h2 class="font-[Playfair_Display,Helvetica] text-[28px] font-normal leading-9 text-[#1b1c1b] sm:text-[32px] sm:leading-10">
+        Nos Prestations Phares
+      </h2>
+    </header>
+    <div class="flex flex-col gap-4 w-full pt-[17px]">
+      @for (item of pricingItems; track item.title) {
+        <article class="flex items-end justify-between gap-4 border-b border-[#874c691a] pb-4">
+          <div class="flex min-w-0 flex-1 flex-col items-start">
+            <h3 class="font-[Manrope,Helvetica] text-lg font-normal leading-7 text-[#1b1c1b]">
+              {{ item.title }}
+            </h3>
+            @if (item.description) {
+              <p class="font-[Manrope,Helvetica] text-sm font-normal leading-5 text-[#504348]">
+                {{ item.description }}
+              </p>
+            }
+            @if (item.badge) {
+              <span class="mt-1 inline-flex h-auto rounded bg-[#874c691a] px-2 py-0.5 font-[Manrope,Helvetica] text-[10px] font-normal leading-[15px] text-[#874c69]">
+                {{ item.badge }}
+              </span>
+            }
+          </div>
+          <div class="pl-4 sm:pl-6">
+            <p class="font-[Playfair_Display,Helvetica] whitespace-nowrap text-2xl font-normal leading-8 text-[#874c69]">
+              {{ item.price }}
+            </p>
+          </div>
+        </article>
+      }
+    </div>
+    <div class="flex w-full justify-center">
+      <button
+        type="button"
+        class="h-auto rounded-none border-b border-[#874c6966] px-0 pt-[0.5px] pb-[4.5px] font-[Manrope,Helvetica] text-xs font-normal leading-4 tracking-[1.20px] text-[#874c69] hover:opacity-70 transition-opacity bg-transparent"
+      >
+        VOIR LA CARTE COMPLÈTE DES SOINS
+      </button>
+    </div>
+  </div>
+</section>

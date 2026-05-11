@@ -1,0 +1,38 @@
+<section class="w-full self-stretch bg-[#874c690d] px-4 py-20 sm:px-6 lg:px-16 lg:py-[120px]">
+  <div class="mx-auto flex w-full max-w-[1200px] flex-col items-start gap-16">
+    <header class="flex w-full flex-col items-center gap-2 text-center">
+      <p class="font-[Manrope,Helvetica] text-xs font-normal tracking-[2.40px] text-[#874c69]">
+        PRESTATIONS PREMIUM
+      </p>
+      <h2 class="font-[Playfair_Display,Helvetica] text-[32px] font-normal leading-10 text-[#1b1c1b]">
+        Nos Services Signature
+      </h2>
+    </header>
+    <div class="grid w-full grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+      @for (service of services; track service.title) {
+        <div class="h-full rounded-xl border border-solid border-[#874c691a] bg-[#fbf9f7] shadow-[0px_1px_2px_#0000000d] p-10 flex flex-col gap-4">
+          <img class="w-full" [alt]="service.imageAlt" [src]="service.imageSrc" />
+          <div class="flex w-full flex-col items-start pt-2">
+            <h3 class="font-[Playfair_Display,Helvetica] text-xl font-normal leading-7 text-[#1b1c1b]">
+              {{ service.title }}
+            </h3>
+          </div>
+          <div class="flex w-full flex-1 flex-col items-start">
+            <p class="font-[Manrope,Helvetica] text-base font-normal leading-6 text-[#504348]">
+              {{ service.description }}
+            </p>
+          </div>
+          <button
+            type="button"
+            class="flex h-auto items-center gap-2 pt-2 text-left"
+          >
+            <span class="font-[Manrope,Helvetica] text-xs font-normal tracking-[1.20px] text-[#874c69]">
+              EN SAVOIR PLUS
+            </span>
+            <img class="shrink-0" alt="En savoir plus" src="container.svg" />
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+</section>

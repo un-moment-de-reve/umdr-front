@@ -1,0 +1,30 @@
+<header class="w-full border-b border-[#d4c2c84c] bg-[#fbf9f7cc] backdrop-blur-md sticky top-0 z-50">
+  <div class="mx-auto flex w-full max-w-[1280px] items-center justify-between px-4 py-3 sm:px-6 lg:px-10 xl:px-16">
+    <div
+      class="h-12 w-12 shrink-0 bg-cover bg-center"
+      style="background-image: url('un-moment-de-r-eve.png')"
+      aria-label="Un Moment de Rêve"
+      role="img"
+    ></div>
+    <nav aria-label="Navigation principale" class="flex-1">
+      <ul class="hidden items-center justify-center gap-5 md:flex lg:gap-8">
+        @for (item of navItems; track item) {
+          <li>
+            <button
+              type="button"
+              class="font-[Manrope,Helvetica] text-xs font-normal leading-4 tracking-[1.20px] text-[#504348] transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#874c69] focus-visible:ring-offset-2"
+            >
+              {{ item }}
+            </button>
+          </li>
+        }
+      </ul>
+    </nav>
+    <button
+      type="button"
+      class="h-auto rounded-full bg-[#874c69] px-4 py-3 font-[Manrope,Helvetica] text-xs font-normal leading-4 tracking-[1.20px] text-white hover:bg-[#7a4560] transition-colors sm:px-6"
+    >
+      RENDEZ-VOUS
+    </button>
+  </div>
+</header>

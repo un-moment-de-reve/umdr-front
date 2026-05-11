@@ -1,0 +1,81 @@
+<footer class="relative w-full self-stretch border-t border-[#874c691a] bg-[#ffd8e84c] px-6 py-16 sm:px-8 lg:px-16 lg:py-[120px]">
+  <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-12 lg:gap-20">
+    <div class="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+
+      <!-- Brand column -->
+      <div class="flex h-full flex-col items-start gap-6">
+        <img class="h-16 w-16 max-w-[270px] object-cover" alt="Un Moment De R'Eve" src="un-moment-de-r-eve.png" />
+        <p class="font-[Manrope,Helvetica] text-base font-normal leading-6 tracking-[0] text-[#504348]">
+          Votre sanctuaire de beauté à<br />
+          Bordeaux. Soins sur-mesure et<br />
+          expertise cosmétique chez Un<br />
+          Moment De R'Eve.
+        </p>
+        <img class="w-full" alt="Réseaux sociaux" src="container-8.svg" />
+      </div>
+
+      <!-- Contact column -->
+      <div class="flex h-full flex-col items-start gap-6">
+        <h2 class="font-[Manrope,Helvetica] text-xs font-normal leading-4 tracking-[0.60px] text-[#1b1c1b]">
+          CONTACT &amp; ACCÈS
+        </h2>
+        <address class="flex w-full not-italic flex-col items-start gap-3">
+          @for (item of contactItems; track item.content) {
+            <a [href]="item.href" class="flex w-full items-start gap-2 text-left">
+              <img class="shrink-0" [alt]="item.alt" [src]="item.icon" />
+              <span class="font-[Manrope,Helvetica] text-base font-normal leading-6 tracking-[0] text-[#504348]">
+                {{ item.content }}
+              </span>
+            </a>
+          }
+        </address>
+      </div>
+
+      <!-- Hours column -->
+      <div class="flex h-full flex-col items-start gap-6">
+        <h2 class="font-[Manrope,Helvetica] text-xs font-normal leading-4 tracking-[0.60px] text-[#1b1c1b]">
+          HORAIRES
+        </h2>
+        <dl class="flex w-full flex-col gap-3">
+          @for (item of openingHours; track item.day) {
+            <div class="flex w-full items-start justify-between gap-4">
+              <dt class="font-[Manrope,Helvetica] text-base font-normal leading-6 tracking-[0] text-[#504348]">
+                {{ item.day }}
+              </dt>
+              <dd class="font-[Manrope,Helvetica] text-base font-normal leading-6 tracking-[0] text-[#504348]">
+                {{ item.hours }}
+              </dd>
+            </div>
+          }
+        </dl>
+      </div>
+
+      <!-- Info links column -->
+      <div class="flex h-full flex-col items-start gap-6">
+        <h2 class="font-[Manrope,Helvetica] text-xs font-normal leading-4 tracking-[0.60px] text-[#1b1c1b]">
+          INFORMATIONS
+        </h2>
+        <nav aria-label="Informations footer" class="w-full">
+          <ul class="flex w-full flex-col items-start gap-3">
+            @for (item of informationLinks; track item.label) {
+              <li class="w-full">
+                <a
+                  [href]="item.href"
+                  class="font-[Manrope,Helvetica] text-base font-normal leading-6 tracking-[0] text-[#504348] hover:text-[#874c69] transition-colors"
+                >
+                  {{ item.label }}
+                </a>
+              </li>
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="w-full border-t border-[#874c691a] pt-8">
+      <p class="font-[Manrope,Helvetica] text-center text-sm font-normal leading-5 tracking-[0] text-[#504348]">
+        © 2024 Un Moment De R'Eve - Institut de Beauté. Tous droits réservés.
+      </p>
+    </div>
+  </div>
+</footer>

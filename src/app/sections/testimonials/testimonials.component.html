@@ -1,21 +1,74 @@
-<section class="relative w-full self-stretch bg-[#874c690d] px-6 py-20 sm:px-10 md:px-16 lg:px-24 lg:py-[120px] xl:px-48">
-  <div class="mx-auto flex w-full max-w-4xl flex-col items-center gap-8">
-    <img class="h-auto w-auto" alt="Guillemets décoratifs" src="container-18.svg" />
-    <div class="flex flex-col items-center gap-8 w-full">
-      <blockquote class="max-w-[820px] text-center font-[Playfair_Display,Helvetica] text-[28px] font-normal italic leading-[1.12] tracking-[0] text-[#1b1c1b] sm:text-[32px] md:text-4xl md:leading-10">
-        "Un lieu d'exception où le professionnalisme rencontre la douceur. Je n'ai jamais eu un soin du visage aussi relaxant et efficace chez Un Moment De R'Eve."
-      </blockquote>
-      <footer class="flex flex-col items-center gap-1">
-        <p class="text-center font-[Manrope,Helvetica] text-xs font-normal leading-4 tracking-[1.20px] text-[#874c69]">
-          SOPHIE M.
-        </p>
-        <p class="text-center font-[Manrope,Helvetica] text-sm font-normal leading-5 tracking-[0] text-[#504348]">
-          Cliente fidèle depuis 3 ans
-        </p>
-      </footer>
-      <div class="flex w-full justify-center">
-        <img class="h-auto w-full max-w-[132px]" alt="Évaluation cinq étoiles" src="container-6.svg" />
-      </div>
+<section
+  class="relative w-full self-stretch overflow-hidden bg-[#874c690d] px-4 py-20 sm:px-6 lg:px-16 lg:py-[120px]"
+>
+  <div
+    class="pointer-events-none absolute left-1/2 top-20 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-[#874c69]/10 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto flex w-full max-w-[1200px] flex-col items-center gap-14">
+    <header class="flex w-full flex-col items-center gap-2 text-center">
+      <p
+        class="font-[Manrope,Helvetica] text-xs font-normal tracking-[2.40px] text-[#874c69]"
+      >
+        AVIS CLIENTS
+      </p>
+
+      <h2
+        class="font-[Playfair_Display,Helvetica] text-[32px] font-normal leading-10 text-[#1b1c1b]"
+      >
+        Vous nous faites confiance
+      </h2>
+    </header>
+
+    <div class="w-full max-w-[920px]">
+      <swiper-container
+        class="testimonials-slider block w-full overflow-hidden pb-14"
+        slides-per-view="1"
+        space-between="32"
+        rewind="true"
+        speed="700"
+        autoplay-delay="6500"
+        autoplay-disable-on-interaction="false"
+        pagination="true"
+      >
+        @for (testimonial of testimonials; track testimonial.name) {
+          <swiper-slide>
+            <article
+              class="mx-auto flex min-h-[360px] w-full max-w-[820px] flex-col items-center justify-center gap-7 rounded-[2rem] bg-[#fbf9f7]/82 px-6 py-10 text-center backdrop-blur-md sm:px-10 md:px-14"
+            >
+              <blockquote
+                class="max-w-[700px] text-center font-[Playfair_Display,Helvetica] text-[24px] font-normal italic leading-[1.25] tracking-[-0.3px] text-[#1b1c1b] sm:text-[28px] md:text-[32px]"
+              >
+                {{ testimonial.quote }}
+              </blockquote>
+
+              <footer class="flex flex-col items-center gap-1">
+                <p
+                  class="text-center font-[Manrope,Helvetica] text-xs font-semibold leading-4 tracking-[1.20px] text-[#874c69]"
+                >
+                  {{ testimonial.name }}
+                </p>
+
+                <p
+                  class="text-center font-[Manrope,Helvetica] text-sm font-normal leading-5 tracking-[0] text-[#504348]"
+                >
+                  {{ getCustomerDuration(testimonial.customerSince) }}
+                </p>
+              </footer>
+
+              <div
+                class="flex items-center justify-center gap-1 text-[#874c69]"
+                aria-label="Évaluation cinq étoiles"
+              >
+                @for (star of getStars(testimonial.rating); track $index) {
+                  <span class="text-base leading-none">★</span>
+                }
+              </div>
+            </article>
+          </swiper-slide>
+        }
+      </swiper-container>
     </div>
   </div>
 </section>
